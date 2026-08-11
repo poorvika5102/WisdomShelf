@@ -18,13 +18,6 @@ WisdomShelf is a simple book-summary website that helps users learn the most val
 ## 🚀 Live Website
 https://poorvika5102.github.io/WisdomShelf/
 
-## 📂 Project Structure
-WisdomShelf/
-├── index.html
-├── CSS files
-├── JavaScript files
-└── Book summary HTML pages
-
 ## 🎯 Purpose
 The goal of WisdomShelf is to make learning from books easier, faster, and more accessible by presenting the most useful ideas and lessons in a simple format.
 
