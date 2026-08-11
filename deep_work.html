@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deep Work - Executive Section-by-Section Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #0284c7;
+            --accent-light: #f0f9ff;
+            --accent-border: #bae6fd;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #e0f2fe;
+            --badge-principle-txt: #0369a1;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .chapter-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .item {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle {
+            background-color: var(--badge-principle-bg);
+            color: var(--badge-principle-txt);
+        }
+
+        .badge-technique {
+            background-color: var(--badge-technique-bg);
+            color: var(--badge-technique-txt);
+        }
+
+        .badge-action {
+            background-color: var(--badge-action-bg);
+            color: var(--badge-action-txt);
+        }
+
+        .content-text {
+            font-size: 0.975rem;
+            color: var(--text-secondary);
+            flex: 1;
+        }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .checklist-card ul {
+            list-style-type: none;
+        }
+
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .item {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Deep Work</h1>
+            <p>Rules for Focused Success in a Distracted World | Cal Newport</p>
+        </header>
+
+        <!-- Introduction -->
+        <div class="section-title">Introduction</div>
+        <div class="chapter-card">
+            <div class="chapter-title">Deep Work Is Valuable, Rare, and Meaningful</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Deep work—the ability to focus without distraction on a cognitively demanding task—is becoming increasingly rare at the exact same time it is becoming increasingly valuable in our economy.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Identify key high-value skills in your field that require extreme concentration to master, and prioritize them over shallow tasks.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Treat focus as a rare skill that gives you a massive competitive advantage.</span>
+            </div>
+        </div>
+
+        <!-- Part 1 -->
+        <div class="section-title">Part 1: The Idea</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 1: Deep Work Is Valuable</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Two core abilities are critical to thriving in the modern economy: 1) Mastering hard things quickly, and 2) Producing at an elite level in quality and speed. Both require deep work.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Formula for elite output: High-Quality Work Produced = (Time Spent) × (Intensity of Focus).</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Stop measuring productivity by total hours worked; measure it by the uninterrupted intensity of focus applied during those hours.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 2: Deep Work Is Rare</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Modern business culture defaults to shallow behaviors (open offices, real-time communication) because they are easy and give the illusion of productivity.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Resist the Principle of Least Resistance (doing whatever is easiest in the moment) and the Metric of Busyness (looking busy without clear outputs).</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Reject real-time responsiveness as a standard of work quality.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 3: Deep Work Is Meaningful</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">What you pay attention to shapes your world. Cultivating deep focus creates a psychological state of flow and satisfaction; fragmented focus induces anxiety.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Reframe deliberate focus from a mere productivity tactic into a source of personal craftsmanship and fulfillment.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Direct your attention intentionally to high-value tasks to improve both output quality and overall wellbeing.</span>
+            </div>
+        </div>
+
+        <!-- Part 2 -->
+        <div class="section-title">Part 2: The Rules</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Rule #1: Work Deeply</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Willpower is a finite resource that drains as you use it. You must build routines and rituals to enter deep work without relying on raw willpower.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Choose a Deep Work Philosophy: Monastic, Bimodal, Rhythmic, or Journalistic.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Pick one philosophy, set up a strict daily ritual (where, how long, rules), and execute a Shutdown Ritual at the end of every workday to disconnect entirely.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Rule #2: Embrace Boredom</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">If you train your brain to seek novel stimulation every time you feel slightly bored, you destroy your capacity for deep concentration.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Productive Meditation — Use physical activity (walking, commuting) to solve a single, well-defined professional problem in your head.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Schedule internet use in advance. Outside of designated blocks, stay completely offline to build mental stamina for boredom.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Rule #3: Quit Social Media</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">The "Any-Benefit Mindset" ruins depth. Instead, adopt the "Craftsman Approach to Tool Selection"—use a tool only if its benefits heavily outweigh its costs.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Evaluate key life/work goals and purge network tools that do not directly support them.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Ban yourself from social media tools for 30 days without notice. Permanently delete any tool that you didn't miss or that didn't significantly impact your life.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Rule #4: Drain the Shallows</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Shallow work keeps you from getting fired, but Deep Work gets you promoted. Minimize shallow work to free up time for depth.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Time-block budgeting, quantifying task depth, and fixed-schedule productivity.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Schedule every minute of your workday using time-blocks. Cap shallow work at 30–50% of your day, and make yourself harder to reach via email.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Schedule Depth:</strong> Block 90–120 minutes of deep focus into your calendar every day.</li>
+                <li><strong>Train Attention:</strong> Schedule internet access blocks; refrain from checking messages outside those times.</li>
+                <li><strong>Daily Shutdown Ritual:</strong> Review remaining tasks, plan for tomorrow, and end with a firm verbal trigger: "Shutdown Complete."</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

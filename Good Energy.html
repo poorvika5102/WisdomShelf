@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good Energy - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #16a34a;
+            --accent-light: #f0fdf4;
+            --accent-border: #bbf7d0;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #e0f2fe;
+            --badge-principle-txt: #0369a1;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #15803d 0%, #14532d 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #bbf7d0; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Good Energy</h1>
+            <p>The Surprising Connection Between Metabolism, Science, and Ultimate Health | Dr. Casey Means and Calley Means</p>
+        </header>
+
+        <!-- Foundations & Metabolic Dysfunction -->
+        <div class="section-title">Part I: The Metabolic Crisis & Cellular Energy</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Mitochondrial Dysfunction as the Root of Disease</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Most chronic diseases—including diabetes, heart disease, Alzheimer's, and depression—share a common root: metabolic dysfunction caused by impaired cellular energy production in the mitochondria.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Metabolic Biomarker Tracking — monitoring key blood markers (fasting glucose, fasting insulin, triglycerides, HDL, ApoB, hs-CRP, and HbA1c) rather than relying solely on standard cholesterol panels.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Order comprehensive metabolic lab work to evaluate optimal, functional reference ranges rather than just "disease-state" standard averages.</span>
+            </div>
+        </div>
+
+        <!-- Nutrition & Food as Information -->
+        <div class="section-title">Part II: Food as Molecular Information</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Unprocessed Foods, Glucose Stability & Gut Integrity</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Food is not just calories; it is signaling code for your cells. Ultra-processed foods, refined sugars, and seed oils trigger systemic inflammation and mitochondrial stress.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Continuous Glucose Monitoring (CGM) & Food Sequencing — pairing carbohydrates with protein, fat, and fiber, and eating vegetables/protein before carbs to flatten glucose spikes.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Eliminate ultra-processed foods and industrial seed oils; focus on whole, nutrient-dense foods that stabilize daily blood sugar curves.</span>
+            </div>
+        </div>
+
+        <!-- Lifestyle Signals & Environmental Factors -->
+        <div class="section-title">Part III: Lifestyle Signals & Environmental Optimization</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Movement, Sleep, Light, and Stress Calibration</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Mitochondria continuously respond to external environmental signals—circadian light exposure, physical movement, sleep quality, and environmental toxins directly regulate energy output.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Circadian Alignment & Frequent Movement Cues — seeking morning sunlight within 30 minutes of waking, avoiding blue light at night, and taking short walk breaks after meals.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Incorporate low-intensity movement throughout the day and protect night sleep to maintain hormonal and metabolic homeostasis.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Track Key Metabolic Biomarkers:</strong> Regularly test fasting insulin, HbA1c, triglycerides, and hs-CRP to catch cellular dysfunction early.</li>
+                <li><strong>Eat Unprocessed, Real Foods:</strong> Remove refined sugars, white flour, and industrial seed oils from your diet to protect mitochondrial health.</li>
+                <li><strong>Align Circadian Rhythms:</strong> Get morning sunlight exposure, take post-meal walks, and prioritize 7–8 hours of uninterrupted sleep.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

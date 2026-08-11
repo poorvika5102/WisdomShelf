@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #1d4ed8;
+            --accent-light: #eff6ff;
+            --accent-border: #bfdbfe;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #e0f2fe;
+            --badge-principle-txt: #0369a1;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #1e40af 0%, #1e1b4b 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #bfdbfe; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gratitude</h1>
+            <p>Essays on Aging, Mortality, and the Gift of Consciousness | Oliver Sacks</p>
+        </header>
+
+        <!-- Aging & The Perspective of Time -->
+        <div class="section-title">Part I: Aging & Life in Retrospect</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Mercury & The Vantage Point of Old Age</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Reaching the final decades of life grants a unique psychological vantage point—a long perspective that brings quiet detachment, heightened appreciation, and freedom from trivial anxieties.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Life Review & Elemental Anchoring — surveying your personal past while finding comfort in the enduring constants of nature and science (e.g., elements, physical laws).</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Reflect on your life’s timeline as an interconnected journey; look beyond immediate daily pressures to cultivate broad historical and personal perspective.</span>
+            </div>
+        </div>
+
+        <!-- Mortality & Radical Clarity -->
+        <div class="section-title">Part II: Facing Mortality & Essential Living</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">My Own Life & Resolving Priorities</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">A terminal diagnosis strips away superficial concerns, leaving a sharp focus on what truly matters: authentic work, deep human relationships, and essential selfhood.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Radical Prioritization — consciously separating non-essential distractions from the meaningful tasks and bonds that give life its ultimate value.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Focus your finite time and energy strictly on work that fulfills you and relationships that matter; shed irrelevant obligations without guilt.</span>
+            </div>
+        </div>
+
+        <!-- Reflection & The Gift of Existence -->
+        <div class="section-title">Part III: Meaning, Belonging & The Final Sabbath</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">My Periodic Table & Sabbath</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Existence itself is an extraordinary, improbable gift. A complete life finishes not in bitterness, but in profound gratitude for having been a thinking, feeling witness to the universe.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Sabbath Reflection & Gratitude Audit — taking time to rest, acknowledge heritage, and express deep thanksgiving for the love given, work accomplished, and world experienced.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Regularly pause to honor your journey, celebrate the marvel of conscious awareness, and express heartfelt thanks to those who shaped your path.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Practice Long-View Reflection:</strong> Assess present challenges against the backdrop of your whole life to maintain emotional balance.</li>
+                <li><strong>Eliminate Non-Essentials:</strong> Routinely clarify your primary goals and dedicate your best focus to essential work and loved ones.</li>
+                <li><strong>Cultivate Active Gratitude:</strong> View consciousness as a rare gift, taking time to feel thankful for the simple privilege of being alive.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

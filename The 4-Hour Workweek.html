@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The 4-Hour Workweek - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #ea580c;
+            --accent-light: #fff7ed;
+            --accent-border: #ffedd5;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #e0f2fe;
+            --badge-principle-txt: #0369a1;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #c2410c 0%, #7c2d12 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #ffedd5; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>The 4-Hour Workweek</h1>
+            <p>Escape 9-5, Live Anywhere, and Join the New Rich | Timothy Ferriss</p>
+        </header>
+
+        <!-- Step 1: Definition -->
+        <div class="section-title">Step 1: D is for Definition</div>
+        
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 1: Caution: Do Not Read This</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">The "New Rich" abandon the deferred-life plan (working 40+ years to retire at 65) in favor of creating lifestyle mobility and freedom in the present.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Relative Income Calculation — evaluating wealth based on hourly earnings and geographic purchasing power rather than gross annual income.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Measure wealth by freedom of time, location mobility, and high hourly income rather than raw salary metrics.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 2: Rules That Change the Rules</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Most workplace rules exist out of habit, not efficiency. Doing the opposite of status-quo defaults creates massive competitive leverage.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Pattern Interruption — actively questioning assumptions and focusing on effectiveness rather than pure efficiency.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Double down on your core strengths instead of spending energy trying to repair minor weaknesses.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 3: Dodging Bullets (Overcoming Fear)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Undefined fear leads to paralysis. Articulating worst-case scenarios makes potential risks manageable and actionable.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Fear-Setting Exercise — detailing worst-case outcomes, preventative measures, and recovery plans for major life decisions.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Measure the cost of inaction—evaluate where you will be emotionally and financially in 1, 5, and 10 years if you don't change.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 4: System Reset (Unreasonable Goals)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Unreasonable goals trigger deeper motivation and face less competition than realistic, incremental targets.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Dreamlining — creating 6 and 12-month blueprints for what you want to have, be, and do, calculating the exact monthly cost (Target Monthly Income).</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Break abstract financial goals down into exact Target Monthly Income (TMI) and daily expense targets.</span>
+            </div>
+        </div>
+
+        <!-- Step 2: Elimination -->
+        <div class="section-title">Step 2: E is for Elimination</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 5: The Time-Famine (Illusion of Busyness)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Busyness is often an excuse for lack of prioritization. Focus on high-impact results using Pareto's Law and Parkinson's Law.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Pareto/Parkinson Integration — identifying the top 20% productive tasks and severely limiting working time to force completion.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Identify the 20% of inputs driving 80% of your results; discard or delegate the rest.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 6: Low-Information Diet</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Most consumed media is irrelevant noise. Selective ignorance frees up cognitive space for meaningful action.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Low-Information Fasting — cutting out news and non-actionable media, shifting from "just-in-case" to "just-in-time" learning.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Execute a 10-day media fast, consuming information strictly when immediate action is required.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 7: Interrupting Interruption</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Interruptions destroy deep work. Eliminate time-wasters, batch communications, and empower others to solve problems independently.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Batching Communication & Autonomous Thresholds — scheduling specific times for email and granting contractors financial approval limits.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Batch email processing to twice daily (11 AM / 4 PM) and set clear auto-responder expectations.</span>
+            </div>
+        </div>
+
+        <!-- Step 3: Automation -->
+        <div class="section-title">Step 3: A is for Automation</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 8: Outsourcing Life</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Outsourcing builds skills in remote management and system design while freeing up valuable time assets.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Virtual Assistant Integration — delegating routine personal and professional administrative tasks to remote virtual assistants.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Never delegate tasks that can be eliminated or automated first; provide explicit instructions and deadlines.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 9: Income Autopilot (Finding the "Muse")</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">A business engine should operate as an automated financial vehicle (a "Muse") rather than demanding daily hands-on labor.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Dry Testing & Niche Targeting — validating demand via search ads and sales pages before manufacturing high-margin products.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Test consumer purchasing intent with minimal ad spend before committing capital to product creation.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 10: MBA in 30 Minutes (Automating Operations)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Scalable systems require third-party fulfillment and automated customer support structures rather than personal intervention.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Fulfillment Infrastructure — outsourcing payment processing, order fulfillment (3PL), and routine support tasks.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Structure operational systems so customer queries are handled by automated systems or empowered partners without your input.</span>
+            </div>
+        </div>
+
+        <!-- Step 4: Liberation -->
+        <div class="section-title">Step 4: L is for Liberation</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 11: Disappearing Act (Remote Work)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Performance matters more than office attendance. Transitioning to remote work requires demonstrating superior output away from the office.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Remote Work Trial Proposal — establishing measurable productivity gains during short remote trial periods to justify full remote status.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Propose a 2-week remote trial run, doubling your tracked output to prove the business value of working offsite.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 12: Beyond Repair (Killing the Job)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Quitting an unfixable, low-leverage job is a strategic reallocation of career capital rather than a failure.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Opportunity Cost Evaluation — contrasting the mental and physical toll of staying against the temporary friction of leaving.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Sever ties quickly with unfixable, low-yield roles to free up bandwidth for building scalable systems.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 13: Mini-Retirements</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Distribute periods of rest and exploration throughout life via extended mini-retirements rather than deferring living to retirement age.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Geographic Arbitrage — earning strong currency and residing in locations with lower cost of living and high quality of life.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Relocate to target international destinations for 1 to 3 months to live comfortably at a fraction of standard vacation costs.</span>
+            </div>
+        </div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Chapter 14: Filling the Void</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Removing work friction leaves an emotional vacuum that must be filled with active learning, skill development, and service.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Purpose-Driven Engagement — replacing passive time consumption with active growth, skill mastery, and community contribution.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Channel free time directly into physical learning, language acquisition, and meaningful service projects.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Fear-Setting:</strong> Outline best-case, worst-case, and repair scenarios for your next career move.</li>
+                <li><strong>80/20 Elimination:</strong> Focus on your top 20% high-value activities and cut or automate the remaining 80%.</li>
+                <li><strong>Batching Schedule:</strong> Reduce email processing to twice daily and eliminate non-essential media notifications.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

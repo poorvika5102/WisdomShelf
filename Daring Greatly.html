@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daring Greatly - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #0d9488;
+            --accent-light: #f0fdfa;
+            --accent-border: #99f6e4;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #ccfbf1;
+            --badge-principle-txt: #0f766e;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #0d9488 0%, #115e59 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #99f6e4; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Daring Greatly</h1>
+            <p>How the Courage to Be Vulnerable Transforms the Way We Live, Love, Parent, and Lead | By Brené Brown</p>
+        </header>
+
+        <!-- Section 1: The Anatomy of Vulnerability -->
+        <div class="section-title">Part I: Scarcity, Myths & Vulnerability</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">1. Scarcity Culture & The Vulnerability Myths</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Vulnerability is not weakness; it is the core measure of courage and the birth-place of love, belonging, joy, and innovation. Modern culture promotes a culture of scarcity ("never good enough"), causing people to mask uncertainty.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Myth Debunking — systematically dismantling the core false assumptions: that vulnerability is weakness, that you can opting out, that it requires oversharing without boundaries, and that you can go it alone.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Reframe emotional exposure, risk, and uncertainty as essential prerequisites for authentic connection and creative breakthroughs rather than flaws to hide.</span>
+            </div>
+        </div>
+
+        <!-- Section 2: Building Resilience -->
+        <div class="section-title">Part II: Shame Resilience & Disarming Armor</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">2. Shame Resilience & Neutralizing Vulnerability Armor</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Shame thrives in secrecy, silence, and judgment; it dissolves when exposed to empathy. Common psychological armor—such as foreboding joy, perfectionism, and numbing—blocks genuine human experience.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">The Shame Resilience Framework — recognize physical triggers, practice critical awareness, connect with trusted allies, and speak openly about shame to diminish its power.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Replace perfectionism with self-compassion and counter foreboding joy by actively practicing gratitude during vulnerable moments.</span>
+            </div>
+        </div>
+
+        <!-- Section 3: Transformative Leadership & Culture -->
+        <div class="section-title">Part III: Wholehearted Parenting, Leadership & Culture</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">3. Daring Greatly in Organizations & Families</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Daring leadership requires leaning into uncomfortable conversations, acknowledging emotional reality, and cultivating environments where people feel safe enough to fail and learn.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Disrupting Culture Disconnects — identifying gaps between stated values and operational behaviors, welcoming honest feedback, and modeling Wholehearted engagement.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Lead and parent by example: align daily habits with core values, embrace mistakes openly, and create psychological safety for others.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Practice Shame Resilience:</strong> Identify physical shame triggers and talk through feelings with a trusted person.</li>
+                <li><strong>Trade Perfectionism for Self-Compassion:</strong> Embrace imperfecion and treat yourself kindly when making mistakes.</li>
+                <li><strong>Cultivate Daily Gratitude:</strong> Lean into joyful moments instead of bracing for hypothetical disaster.</li>
+                <li><strong>Foster Psychological Safety:</strong> Model vulnerable communication in your work, relationships, and home life.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

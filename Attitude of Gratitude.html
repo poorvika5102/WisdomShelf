@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attitude of Gratitude - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #ca8a04;
+            --accent-light: #fefce8;
+            --accent-border: #fef08a;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #e0f2fe;
+            --badge-principle-txt: #0369a1;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #a16207 0%, #713f12 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #fef08a; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Attitude of Gratitude</h1>
+            <p>How to Give and Receive Joy Every Day of Your Life | M.J. Ryan</p>
+        </header>
+
+        <!-- Foundations of Gratitude -->
+        <div class="section-title">Part I: The Science & Habit of Gratitude</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Gratitude as a Mindset Choice & Brain Habit</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Gratitude is not a passive reaction to good circumstances; it is an active stance and brain muscle that overrides our natural human negativity bias.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Attitudinal Reframing — deliberately shifting focus from what is lacking or broken toward what is present, nourishing, and functional.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Treat gratitude as a daily practice rather than an occasional feeling; consciously look for the good in mundane situations.</span>
+            </div>
+        </div>
+
+        <!-- Overcoming Internal Barriers -->
+        <div class="section-title">Part II: Overcoming Blocks to Joy</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Dismantling Adaptation & Comparison</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Entitlement, social comparison, and hedonic adaptation are the primary thieves of joy, blinding us to the everyday gifts already in our possession.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Subtractive Thinking & Fresh Eyes — imagining the absence of everyday blessings (health, shelter, loved ones) to restore appreciation for them.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Catch yourself when comparing your life to others; redirect that energy into naming three immediate things you are thankful for right now.</span>
+            </div>
+        </div>
+
+        <!-- Practical Daily Exercises -->
+        <div class="section-title">Part III: Daily Practices & Expressive Living</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Gratitude Rituals & Shared Appreciation</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Gratitude expands when shared. Expressing appreciation strengthens interpersonal bonds and deepens your own sense of personal contentment.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Gratitude Anchoring & Verbal Notes — linking gratitude practices to existing daily habits (like morning coffee or dinner) and sending direct thank-you messages.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Express explicit appreciation to at least one person every day through a note, conversation, or simple gesture of thanks.</span>
+            </div>
+        </div>
+
+        <!-- Resilience & Adversity -->
+        <div class="section-title">Part IV: Gratitude in Hard Times</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">Finding Light in Difficulty & Suffering</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Grateful living does not ignore pain; it provides the emotional resilience needed to navigate hardship by finding hidden lessons and strength within trials.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Silver Lining Inquiries — asking what wisdom, strength, or unexpected blessings can be harvested from difficult experiences.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">When facing setbacks, ask yourself: "What is this situation teaching me, and what can I still be grateful for amidst the challenge?"</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Anchor Daily Gratitude:</strong> Pair a moment of reflection with an established routine, such as listing three blessings before sleep.</li>
+                <li><strong>Express Thanks Directly:</strong> Frequently send notes or speak aloud words of genuine appreciation to family, friends, and colleagues.</li>
+                <li><strong>Practice Subtractive Thinking:</strong> Counter entitlement and comparison by reflecting on how much worse off you would be without life's basic gifts.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

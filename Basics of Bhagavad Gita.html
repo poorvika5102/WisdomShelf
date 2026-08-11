@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Bhagavad Gita - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #c2410c;
+            --accent-light: #fff7ed;
+            --accent-border: #ffedd5;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #ffedd5;
+            --badge-principle-txt: #9a3412;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #c2410c 0%, #431407 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #ffedd5; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Basics of Bhagavad Gita</h1>
+            <p>A Thematic Study of the Bhagavad Gita | Based on the teachings of A. C. Bhaktivedanta Swami Prabhupada</p>
+        </header>
+
+        <!-- Section 1: The Five Primary Topics (Sambandha) -->
+        <div class="section-title">Part I: The Five Fundamental Truths (Tattvas)</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">1. Jiva, Ishvara, Prakriti, Kala & Karma</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">The universe operates on five basic truths: Ishvara (the Supreme Controller), Jiva (the individual soul), Prakriti (material nature), Kala (time), and Karma (action/reaction). The soul is eternal (atman) and distinct from the temporary material body.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Self-Realization Inquiry — constantly distinguishing between the unchanging eternal observer (soul) and the transient bodily dress influenced by material nature.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Shift identity away from bodily designations (nation, race, gender) to recognize yourself as an eternal spiritual entity.</span>
+            </div>
+        </div>
+
+        <!-- Section 2: The Three Modes of Material Nature & Karma (Abhidheya) -->
+        <div class="section-title">Part II: Three Gunas, Karma-Yoga & Detached Action</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">2. Transcending the Three Gunas through Nishkama Karma</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">All material actions are governed by the three gunas: Sattva (goodness), Rajas (passion), and Tamas (ignorance). Performing duty without attachment to the fruits (Nishkama Karma-yoga) frees one from the cycle of karmic bondage.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Duty As Sacrifice (Yajna) — offering the results of all daily work, talents, and obligations to the Supreme rather than seeking selfish ego-gratification.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Execute prescribed daily duties with focus and excellence while surrendering attachment to outcome or personal reward.</span>
+            </div>
+        </div>
+
+        <!-- Section 3: The Path of Devotion & Ultimate Goal (Prayojana) -->
+        <div class="section-title">Part III: Bhakti-Yoga & Surrender (Ultimate Perfection)</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">3. Bhakti-Yoga & Complete Surrender (Sharanagati)</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Bhakti (pure loving devotional service) is the highest ladder step of yoga. Surrendering unto the Supreme (Sharanagati) relieves the soul of fear, bestows liberation (moksha), and re-establishes the soul's constitutional position of eternal loving service.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Mantra Meditation & Mind Purification — centering the mind through regular chanting and remembrance to cleanse material desires and cultivate steady devotion.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Incorporate regular spiritual practices into daily life to elevate consciousness above material anxieties.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Practice Non-Attachment:</strong> Perform daily duties attentively without being emotionally enslaved by success or failure.</li>
+                <li><strong>Cultivate Goodness (Sattva):</strong> Structure your diet, environment, and habits to foster clarity, peace, and elevated thinking.</li>
+                <li><strong>Engage in Daily Meditation:</strong> Dedicate focused time each day to mantra meditation to calm and purify the mind.</li>
+                <li><strong>Adopt a Service Mindset:</strong> View work and talent as offerings of service rather than purely tools for ego expansion.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

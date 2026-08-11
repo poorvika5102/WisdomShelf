@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Book Summaries - Library</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent-primary: #2563eb;
+            --accent-hover: #1d4ed8;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.5;
+            padding: 2rem 1rem;
+        }
+
+        .container {
+            max-width: 1080px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* Search Section */
+        .search-container {
+            max-width: 550px;
+            margin: 0 auto 3rem auto;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.85rem 1.25rem 0.85rem 3rem;
+            font-size: 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            background-color: #ffffff;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            pointer-events: none;
+        }
+
+        /* Books Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .book-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .book-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cover-wrapper {
+            width: 100%;
+            height: 320px;
+            background-color: #e2e8f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .cover-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .book-card:hover .cover-img {
+            transform: scale(1.03);
+        }
+
+        .book-info {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .book-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.35rem;
+            color: var(--text-primary);
+        }
+
+        .book-author {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .card-button {
+            margin-top: auto;
+            display: inline-block;
+            text-align: center;
+            padding: 0.5rem 1rem;
+            background-color: #f1f5f9;
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.875rem;
+            border-radius: 6px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .book-card:hover .card-button {
+            background-color: var(--accent-primary);
+            color: #ffffff;
+        }
+
+        .no-results {
+            text-align: center;
+            grid-column: 1 / -1;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+            display: none;
+        }
+
+        .no-results h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 640px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Executive Summaries</h1>
+            <p>Access key principles, techniques, and action plans from top titles.</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-container">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by book title or author..."
+                onkeyup="filterBooks()">
+        </div>
+
+        <!-- Book Library Grid -->
+        <div class="grid" id="bookGrid">
+
+           
+            <!-- Book 1: A Nation of Idiots -->
+            <a href="A Nation of Idiots.html" class="book-card" data-title="a nation of idiots"
+                data-author="daksh tyagi">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/91ylrTgh-QL._AC_UF1000,1000_QL80_.jpg" alt="A Nation of Idiots" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">A Nation of Idiots</div>
+                    <div class="book-author">By Daksh Tyagi</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 2: Ask and It Is Given -->
+            <a href="Ask and It Is Given.html" class="book-card" data-title="ask and it is given"
+                data-author="esther and jerry hicks">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71bix8xeXQL._UF1000,1000_QL80_.jpg" alt="Ask and It Is Given" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Ask and It Is Given</div>
+                    <div class="book-author">By Esther and Jerry Hicks</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 3: Atomic Habits -->
+            <a href="atomic_habits.html" class="book-card" data-title="atomic habits" data-author="james clear">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG0nC48c3oHzUUAsaBOaHKMzeTHsll_aBhCnuagFw0RQ&s" alt="Atomic Habits" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Atomic Habits</div>
+                    <div class="book-author">By James Clear</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 4: Attitude of Gratitude -->
+            <a href="Attitude of Gratitude.html" class="book-card" data-title="attitude of gratitude"
+                data-author="m.j. ryan">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1171991580i/130091.jpg" alt="Attitude of Gratitude" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Attitude of Gratitude</div>
+                    <div class="book-author">By M.J. Ryan</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 5: Autobiography of a Yogi -->
+            <a href="Autobiography of a Yogi.html" class="book-card" data-title="autobiography of a yogi"
+                data-author="paramahansa yogananda">
+                <div class="cover-wrapper">
+                    <img src="https://yssofindia.org/wp-content/uploads/autobiography-of-a-yogi-english-paperback-by-sri-sri-paramahansa-yogananda-yss-front.jpg" alt="Autobiography of a Yogi" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Autobiography of a Yogi</div>
+                    <div class="book-author">By Paramahansa Yogananda</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 6: Basics of Bhagavad Gita -->
+            <a href="Basics of Bhagavad Gita.html" class="book-card" data-title="basics of bhagavad gita"
+                data-author="a. c. bhaktivedanta swami prabhupada">
+                <div class="cover-wrapper">
+                    <img src="https://cdn.harekrishnabooks.com/2021/07/Basic-of-BG-400x665.jpg" alt="Basics of Bhagavad Gita" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Basics of Bhagavad Gita</div>
+                    <div class="book-author">Based on the teachings of A. C. Bhaktivedanta Swami Prabhupada</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 7: Becoming Karma Yogi -->
+            <a href="becoming karma yogi.html" class="book-card" data-title="becoming karma yogi"
+                data-author="classical yoga philosophy">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT73CjLquzSJB4UxcWpKd5Fc7lgAGWN5_Dh4fOeipavwi7oUjQq" alt="Becoming Karma Yogi" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Becoming Karma Yogi</div>
+                    <div class="book-author">Classical Yoga Philosophy</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 8: Becoming Supernatural -->
+            <a href="Becoming_Supernatural.html" class="book-card" data-title="becoming supernatural"
+                data-author="dr. joe dispenza">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/813RHV5Qw-L.jpg" alt="Becoming Supernatural" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Becoming Supernatural</div>
+                    <div class="book-author">By Dr. Joe Dispenza</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 10: Breaking the Habit of Being Yourself -->
+            <a href="Breaking the Habit of Being Yourself.html" class="book-card"
+                data-title="breaking the habit of being yourself" data-author="dr. joe dispenza">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTPja13Fn_nLE3Q1x3K9WxNE7i_AxJtxmFzcCxD-VDAQJSOYpDI" alt="Breaking the Habit of Being Yourself" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Breaking the Habit of Being Yourself</div>
+                    <div class="book-author">By Dr. Joe Dispenza</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 11: Can't Hurt Me -->
+            <a href="Can't Hurt Me.html" class="book-card" data-title="can't hurt me" data-author="david goggins">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/81gTRv2HXrL._AC_UF1000,1000_QL80_.jpg"
+                        alt="Can't Hurt Me" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Can't Hurt Me</div>
+                    <div class="book-author">By David Goggins</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 12: Daring Greatly -->
+            <a href="Daring Greatly.html" class="book-card" data-title="daring greatly" data-author="brené brown">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/81GOZ+-+yiL._AC_UF1000,1000_QL80_.jpg" alt="Daring Greatly" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Daring Greatly</div>
+                    <div class="book-author">By Brené Brown</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 13: Deep Work -->
+            <a href="deep_work.html" class="book-card" data-title="deep work" data-author="cal newport">
+                <div class="cover-wrapper">
+                    <img src="https://www.crossword.in/cdn/shop/products/hachette-uk-books-default-title-deep-work-rules-for-focused-success-in-a-distracted-world-paperback-newport-cal-paperback-newport-cal-40359324254425.jpg?v=1775394876" alt="Deep Work" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Deep Work</div>
+                    <div class="book-author">By Cal Newport</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 14: Do It Today -->
+            <a href="Do it Today.html" class="book-card" data-title="do it today" data-author="darius foroux">
+                <div class="cover-wrapper">
+                    <img src="https://cdn.grofers.com/da/cms-assets/cms/product/c566178e-85c5-4db6-abec-2426c4b8310b.jpg" alt="Do It Today" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Do It Today</div>
+                    <div class="book-author">By Darius Foroux</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 15: Essentialism -->
+            <a href="Essentialism.html" class="book-card" data-title="essentialism" data-author="greg mckeown">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61QfKSGnwEL._AC_UF1000,1000_QL80_.jpg" alt="Essentialism" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Essentialism</div>
+                    <div class="book-author">By Greg McKeown</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 16: Free To Lead -->
+            <a href="Free To Lead.html" class="book-card"
+                data-title="free to lead unleash your hidden leadership genius" data-author="will steel">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61vixxgxmFL._AC_UF350,350_QL50_.jpg"
+                        alt="Free To Lead" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Free To Lead</div>
+                    <div class="book-author">By Will Steel</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 17: Good Energy -->
+            <a href="Good Energy.html" class="book-card" data-title="good energy"
+                data-author="dr. casey means and calley means">
+                <div class="cover-wrapper">
+                    <img src="https://images.meesho.com/images/products/580355381/kaccb_512.webp?width=512" alt="Good Energy" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Good Energy</div>
+                    <div class="book-author">By Dr. Casey Means and Calley Means</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 18: Gratitude -->
+            <a href="Gratitude.html" class="book-card" data-title="gratitude" data-author="oliver sacks">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61coFFPc3WL._AC_UF1000,1000_QL80_.jpg" alt="Gratitude" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Gratitude</div>
+                    <div class="book-author">By Oliver Sacks</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 19: How to Win Friends and Influence People -->
+            <a href="How to Win Friends and Influence People.html" class="book-card"
+                data-title="how to win friends and influence people" data-author="dale carnegie">
+                <div class="cover-wrapper">
+                    <img src="https://miro.medium.com/1*OtxsMJ5huAFwANLR6lONyw.jpeg" alt="How to Win Friends and Influence People"
+                        class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">How to Win Friends and Influence People</div>
+                    <div class="book-author">By Dale Carnegie</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 20: Intuitive Eating -->
+            <a href="Intuitive Eating.html" class="book-card" data-title="intuitive eating"
+                data-author="evelyn tribole and elyse resch">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71SB9HmPtGL.jpg" alt="Intuitive Eating" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Intuitive Eating</div>
+                    <div class="book-author">By Evelyn Tribole and Elyse Resch</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 21: Letting Go -->
+            <a href="Letting Go.html" class="book-card" data-title="letting go" data-author="david r. hawkins">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71-d9rJLmiL._UF1000,1000_QL80_.jpg" alt="Letting Go" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Letting Go</div>
+                    <div class="book-author">By David R. Hawkins</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 22: Made to Stick -->
+            <a href="Made to Stick.html" class="book-card" data-title="made to stick"
+                data-author="chip heath and dan heath">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71ZtF6rSKYL.jpg" alt="Made to Stick" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Made to Stick</div>
+                    <div class="book-author">By Chip Heath and Dan Heath</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 23: Make Your Bed -->
+            <a href="Make Your Bed.html" class="book-card" data-title="make your bed" data-author="william h. mcraven">
+                <div class="cover-wrapper">
+                    <img src="https://image.slidesharecdn.com/make-your-bed-pdf1-220921062746-3f3189cf/95/Make-your-Bed-PDF-1-pdf-2-1024.jpg" alt="Make Your Bed" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Make Your Bed</div>
+                    <div class="book-author">By Admiral William H. McRaven</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 24: Man's Search for Meaning -->
+            <a href="Man's Search for Meaning.html" class="book-card" data-title="man's search for meaning"
+                data-author="viktor e. frankl">
+                <div class="cover-wrapper">
+                    <img src="https://i.redd.it/i754h3lhvige1.jpeg" alt="Man's Search for Meaning" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Man's Search for Meaning</div>
+                    <div class="book-author">By Viktor E. Frankl</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 25: Meditations -->
+            <a href="Meditations.html" class="book-card" data-title="meditations" data-author="marcus aurelius">
+                <div class="cover-wrapper">
+                    <img src="https://osu-wams-blogs-uploads.s3.amazonaws.com/blogs.dir/7696/files/2024/01/marcus-arelius-meditations-pic.jpg" alt="Meditations" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Meditations</div>
+                    <div class="book-author">By Marcus Aurelius</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 26: Mindset -->
+            <a href="Mindset.html" class="book-card" data-title="mindset" data-author="carol s. dweck">
+                <div class="cover-wrapper">
+                    <img src="https://static.wixstatic.com/media/b5cc94_21ecd9130d134e8685830c0de9431831~mv2.png/v1/fill/w_1000,h_750,al_c,q_90,usm_0.66_1.00_0.01/b5cc94_21ecd9130d134e8685830c0de9431831~mv2.png" alt="Mindset" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Mindset</div>
+                    <div class="book-author">By Carol S. Dweck</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 27: Never Split the Difference -->
+            <a href="Never Split the Difference Negotiating As If Your Life Depended On It.html" class="book-card"
+                data-title="never split the difference" data-author="chris voss with tahl raz">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMjMQ2WfPGAWZTnXEhLZsPNi3AHfm91I2UeCABNQGWrSP8vkTYvvYqr52Qqa-DxHp50zim464UfgyQVengJROoo-Qk8AciD2vrKS6JDQ&s=10" alt="Never Split the Difference" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Never Split the Difference</div>
+                    <div class="book-author">By Chris Voss with Tahl Raz</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 28: Psycho-Cybernetics -->
+            <a href="Psycho-Cybernetics.html" class="book-card" data-title="psycho cybernetics"
+                data-author="maxwell maltz">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/81VnHT2MH4L._AC_UF1000,1000_QL80_.jpg" alt="Psycho-Cybernetics" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Psycho-Cybernetics</div>
+                    <div class="book-author">By Maxwell Maltz</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 29: Quiet -->
+            <a href="Quiet.html" class="book-card" data-title="quiet" data-author="susan cain">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61iZ8P97opL._AC_UF1000,1000_QL80_.jpg" alt="Quiet" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Quiet</div>
+                    <div class="book-author">By Susan Cain</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 30: Rich Dad Poor Dad -->
+            <a href="Rich Dad Poor Dad.html" class="book-card" data-title="rich dad poor dad"
+                data-author="robert t. kiyosaki">
+                <div class="cover-wrapper">
+                    <img src="https://i0.wp.com/travismewhirter.com/wp-content/uploads/2020/04/IMG_3778-2.jpg?fit=1000%2C920&ssl=1" alt="Rich Dad Poor Dad" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Rich Dad Poor Dad</div>
+                    <div class="book-author">By Robert T. Kiyosaki</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 31: Start With Why -->
+            <a href="Start With Why.html" class="book-card" data-title="start with why" data-author="simon sinek">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/71NBZIExBCL._AC_UF1000,1000_QL80_.jpg" alt="Start With Why" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Start With Why</div>
+                    <div class="book-author">By Simon Sinek</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 32: Thanks! -->
+            <a href="Thanks! How Practicing Gratitude Can Make You Happier.html" class="book-card"
+                data-title="thanks how practicing gratitude can make you happier" data-author="robert a. emmons">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS436x03PbYKqiH_ilTt_8ZvVP0eC1WJkfXHK3vMmVbpQqHC9Bx" alt="Thanks! How Practicing Gratitude Can Make You Happier"
+                        class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Thanks!</div>
+                    <div class="book-author">By Robert A. Emmons, Ph.D.</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 33: The 4-Hour Workweek -->
+            <a href="The 4-Hour Workweek.html" class="book-card" data-title="the 4 hour workweek"
+                data-author="timothy ferriss">
+                <div class="cover-wrapper">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/c/c3/The_4-Hour_Workweek_%28front_cover%29.jpg" alt="The 4-Hour Workweek" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The 4-Hour Workweek</div>
+                    <div class="book-author">By Timothy Ferriss</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 34: The 7 Habits of Highly Effective People -->
+            <a href="The 7 Habits of Highly Effective.html" class="book-card"
+                data-title="the 7 habits of highly effective people" data-author="stephen r. covey">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0JQvI9OpdsPC71PcyUU7E-EYjO_NXLqeQoaICAld45ZEvDSMDeseHG5ru--0XGqgRS--u29VJbu2DHZYh7BrbjHkm3-vcci3zrPHPtsk&s=10" alt="The 7 Habits of Highly Effective People"
+                        class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The 7 Habits of Highly Effective People</div>
+                    <div class="book-author">By Stephen R. Covey</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 35: The ABCs of Journaling -->
+            <a href="The ABCs of Journaling.html" class="book-card" data-title="the abcs of journaling"
+                data-author="abbey sy">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1482913973i/32468497.jpg" alt="The ABCs of Journaling" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The ABCs of Journaling</div>
+                    <div class="book-author">By Abbey Sy</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 36: The Almanack of Naval Ravikant -->
+            <a href="The Almanack of Naval Ravikant A Guide to Wealth and Happiness.html" class="book-card"
+                data-title="the almanack of naval ravikant" data-author="eric jorgenson">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJaTB480K9IsnbFiSD_hq53zGw9bL7iKPArPo8_MtVF3hwOZ9lkkiEZPp9DzanKBIw1o3Td5tWGg2HE9TxNfs5wPzdw40vQEyjzGgrrB0&s=10" alt="The Almanack of Naval Ravikant" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Almanack of Naval Ravikant</div>
+                    <div class="book-author">Compiled by Eric Jorgenson</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 37: The Art of Reading People -->
+            <a href="The Art of Reading People 95 Tricks and Techniques.html" class="book-card"
+                data-title="the art of reading people" data-author="author not specified">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvhLvdIi3rD5MabZytyOUsvn61RC7UHRAwmiV5UXXxzw&s=10" alt="The Art of Reading People" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Art of Reading People</div>
+                    <div class="book-author">Author not specified</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 38: The Artist's Way -->
+            <a href="The Artist's Way.html" class="book-card" data-title="the artist's way" data-author="julia cameron">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/81bwx11MQQL._UF1000,1000_QL80_.jpg" alt="The Artist's Way" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Artist's Way</div>
+                    <div class="book-author">By Julia Cameron</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 39: The Book of Delights -->
+            <a href="The Book of Delights.html" class="book-card" data-title="the book of delights"
+                data-author="ross gay">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbKeLB0L2_wuNPqvYzpw-9KCN64gf7xGz5Ovjef6PGIg&s=10" alt="The Book of Delights" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Book of Delights</div>
+                    <div class="book-author">By Ross Gay</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 40: The Bullet Journal Method -->
+            <a href="The Bullet Journal Method.html" class="book-card" data-title="the bullet journal method"
+                data-author="ryder carroll">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3aUp-pFTHbRBfejoQ_-bNiM07-rPmIaT2n3j9_IIkpw&s=10" alt="The Bullet Journal Method" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Bullet Journal Method</div>
+                    <div class="book-author">By Ryder Carroll</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 41: The Daily Stoic -->
+            <a href="The Daily Stoic.html" class="book-card" data-title="the daily stoic"
+                data-author="ryan holiday and stephen hanselman">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTX4wkcUB4qITd_nF99JJTlrWWmTM2EkTNHZNuqckwxnA&s=10" alt="The Daily Stoic" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Daily Stoic</div>
+                    <div class="book-author">By Ryan Holiday & Stephen Hanselman</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 42: The Game of Life and How to Play It -->
+            <a href="The Game of Life and How to Play It.html" class="book-card"
+                data-title="the game of life and how to play it" data-author="florence scovel shinn">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2a7RURpLbNZdAcAOnL0l0Bhp2udVtyRu-kd7IEUIz1g&s=10" alt="The Game of Life and How to Play It" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Game of Life and How to Play It</div>
+                    <div class="book-author">By Florence Scovel Shinn</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 43: The Gifts of Imperfection -->
+            <a href="The Gifts of Imperfection.html" class="book-card" data-title="the gifts of imperfection"
+                data-author="brené brown">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4zAaMLT4q6XGRo4N6MHjLRMzsiMBdGsrcVpP78sBW-w&s=10" alt="The Gifts of Imperfection" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Gifts of Imperfection</div>
+                    <div class="book-author">By Brené Brown</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 44: The Greatest Secret -->
+            <a href="the greatest secret.html" class="book-card" data-title="the greatest secret"
+                data-author="rhonda byrne">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQO4KdhSK8rG0dPF5HFgqKti8ESWnpbGRlZyhLJZdkLHA&s=10" alt="The Greatest Secret" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Greatest Secret</div>
+                    <div class="book-author">By Rhonda Byrne</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 45: The Mountain Is You -->
+            <a href="The Mountain Is You.html" class="book-card" data-title="the mountain is you"
+                data-author="brianna wiest">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-C5K6tVK1uCNEKjrwKNmntxCCklFIg5-huN3i0hh-yw&s=10" alt="The Mountain Is You" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Mountain Is You</div>
+                    <div class="book-author">By Brianna Wiest</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 46: The New Diary -->
+            <a href="The New Diary.html" class="book-card" data-title="the new diary" data-author="tristine rainer">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/81w+-JLjGqL._UF1000,1000_QL80_.jpg" alt="The New Diary" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The New Diary</div>
+                    <div class="book-author">By Tristine Rainer</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 47: The Power of Now -->
+            <a href="The Power of Now.html" class="book-card" data-title="the power of now" data-author="eckhart tolle">
+                <div class="cover-wrapper">
+                    <img src="https://eckharttolle.com/wp-content/uploads/2018/01/10-1-57731-480-8__46425_zoom.png"
+                        alt="The Power of Now" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Power of Now</div>
+                    <div class="book-author">By Eckhart Tolle</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 48: The Power of Your Subconscious Mind -->
+            <a href="The Power of Your Subconscious Mind.html" class="book-card"
+                data-title="the power of your subconscious mind" data-author="dr. joseph murphy">
+                <div class="cover-wrapper">
+                    <img src="https://m.media-amazon.com/images/I/61gaxKFXumL.jpg" alt="The Power of Your Subconscious Mind" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Power of Your Subconscious Mind</div>
+                    <div class="book-author">By Dr. Joseph Murphy</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 49: The Psychology of Money -->
+            <a href="The Psychology of Money.html" class="book-card" data-title="the psychology of money"
+                data-author="morgan housel">
+                <div class="cover-wrapper">
+                    <img src="https://i0.wp.com/siddharthchatterjee.com/wp-content/uploads/2023/09/psych-money-cover.jpeg?resize=930%2C620&ssl=1" alt="The Psychology of Money" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Psychology of Money</div>
+                    <div class="book-author">By Morgan Housel</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 50: The Psychology of Persuasion -->
+            <a href="The Psychology of Persuasion.html" class="book-card" data-title="the psychology of persuasion"
+                data-author="robert b. cialdini">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRbkBgJkMjrYSVGLXBHkdFJVeZbZ0JVWq2NjbCpuH1a2QQoSK5B" alt="The Psychology of Persuasion" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Psychology of Persuasion</div>
+                    <div class="book-author">By Robert B. Cialdini</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 51: The Secret -->
+            <a href="the_secret.html" class="book-card" data-title="the secret" data-author="rhonda byrne">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdnA2r_BJDWzt-A4FlgDdfr1O2vdudCGoCmVpNlqfM4A&s=10" alt="The Secret" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Secret</div>
+                    <div class="book-author">By Rhonda Byrne</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 52: The Subtle Art of Not Giving a F*ck -->
+            <a href="The Subtle Art of Not Giving a Fck.html" class="book-card"
+                data-title="the subtle art of not giving a fck" data-author="mark manson">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo0C83loD7aBJkVr9b5rlV5TICysuZoc6OUEHPjHpbgQ&s=10" alt="The Subtle Art of Not Giving a Fck" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">The Subtle Art of Not Giving a F*ck</div>
+                    <div class="book-author">By Mark Manson</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 53: Think and Grow Rich -->
+            <a href="Think and Grow Rich.html" class="book-card" data-title="think and grow rich"
+                data-author="napoleon hill">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsSg95EX4EuV5ii5-PvSBkf4Rb5Xr0sOuT1eWQOGwPsw&s" alt="Think and Grow Rich" class="cover-img" loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Think and Grow Rich</div>
+                    <div class="book-author">By Napoleon Hill</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+
+
+            <!-- Book 54: Writing Down Your Soul -->
+            <a href="Writing Down Your Soul.html" class="book-card" data-title="writing down your soul"
+                data-author="janet conner">
+                <div class="cover-wrapper">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gJwfZODsYjKMDKz3WxfkPNchvlNEIbp40Hn5RcAq2A&s=10" alt="Writing Down Your Soul" class="cover-img"
+                        loading="lazy">
+                </div>
+                <div class="book-info">
+                    <div class="book-title">Writing Down Your Soul</div>
+                    <div class="book-author">By Janet Conner</div>
+                    <div class="card-button">Read Summary &rarr;</div>
+                </div>
+            </a>
+            <!-- Fallback state when search yields no matches -->
+            <div class="no-results" id="noResults">
+                <h3>No summaries found</h3>
+                <p>Try searching for a different title or author.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function filterBooks() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.book-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const title = card.getAttribute('data-title');
+                const author = card.getAttribute('data-author');
+
+                if (title.includes(query) || author.includes(query)) {
+                    card.style.display = "flex";
+                    visibleCount++;
+                } else {
+                    card.style.display = "none";
+                }
+            });
+
+            // Toggle "No results" message
+            const noResults = document.getElementById('noResults');
+            if (visibleCount === 0) {
+                noResults.style.display = "block";
+            } else {
+                noResults.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do It Today - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #e11d48;
+            --accent-light: #fff1f2;
+            --accent-border: #fecdd3;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #ffe4e6;
+            --badge-principle-txt: #9f1239;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #e11d48 0%, #881337 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #fecdd3; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Do It Today</h1>
+            <p>Overcome Procrastination, Improve Productivity, and Achieve More Meaningful Things | By Darius Foroux</p>
+        </header>
+
+        <!-- Section 1: Overcoming Procrastination -->
+        <div class="section-title">Part I: Understanding & Beating Procrastination</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">1. The Psychology of Delay & Action Systems</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Procrastination is not a time-management flaw; it is an emotional and habit failure. Overcoming it requires minimizing friction, eliminating decision fatigue, and relying on repeatable systems rather than unpredictable bursts of motivation.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Friction Reduction & Minimum Viable Progress — breaking intimidating tasks into tiny, friction-free components so small that starting requires almost zero willpower.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Never wait to "feel ready"—take immediate, small physical action to generate momentum, trusting motivation to follow.</span>
+            </div>
+        </div>
+
+        <!-- Section 2: Improving Productivity -->
+        <div class="section-title">Part II: Systems for High-Impact Productivity</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">2. Focus, Eliminate Distractions & Daily Execution</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Productivity is doing the right things effectively, not filling every hour with busywork. True output comes from protecting deep focus, eliminating low-value tasks, and keeping daily priorities remarkably small.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">The Rule of 3 Priorities — identifying no more than 3 critical tasks per day and completing them before responding to external demands like email or social media.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Batch administrative chores and aggressively eliminate non-essential commitments to preserve prime energy for priority goals.</span>
+            </div>
+        </div>
+
+        <!-- Section 3: Meaningful Living & Consistency -->
+        <div class="section-title">Part III: Achieving Meaningful Goals & Long-Term Consistency</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">3. Compound Consistency & Living Purposefully</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">Long-term success is the compounding effect of small, unremarkable daily efforts repeated consistently. Meaning is derived from taking daily control over your time and aligning activities with personal values.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Daily Review & System Auditing — conducting a quick evening assessment to track completion, identify time drains, and calibrate tomorrow's system.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Focus entirely on winning the present day rather than overwhelming yourself with distant, multi-year plans.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Select 3 Daily Priorities:</strong> Limit your daily task list to 3 vital outcomes every morning.</li>
+                <li><strong>Lower Starting Friction:</strong> Shrink intimidating tasks until starting takes less than two minutes.</li>
+                <li><strong>Eliminate Time Drains:</strong> Disable non-essential notifications and batch email checks to fixed times.</li>
+                <li><strong>Review Your Day Nightly:</strong> Audit time spent daily to ensure alignment with long-term goals.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

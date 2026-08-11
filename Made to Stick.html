@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Made to Stick - Executive Summary</title>
+    <style>
+        :root {
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #334155;
+            --accent-primary: #ea580c;
+            --accent-light: #fff7ed;
+            --accent-border: #ffedd5;
+            --border-color: #e2e8f0;
+            --badge-principle-bg: #ffedd5;
+            --badge-principle-txt: #9a3412;
+            --badge-technique-bg: #f3e8ff;
+            --badge-technique-txt: #6b21a8;
+            --badge-action-bg: #d1fae5;
+            --badge-action-txt: #047857;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .container { max-width: 900px; margin: 0 auto; }
+
+        header {
+            background: linear-gradient(135deg, #ea580c 0%, #7c2d12 100%);
+            color: #ffffff;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.5rem; letter-spacing: -0.025em; }
+        header p { color: #ffedd5; font-size: 1.1rem; }
+
+        .section-title {
+            font-size: 1.4rem;
+            color: var(--accent-primary);
+            border-bottom: 2px solid var(--accent-border);
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1rem 0;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .chapter-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .chapter-card:hover { transform: translateY(-2px); }
+        .chapter-title { font-size: 1.15rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.75rem; }
+
+        .item { margin-bottom: 0.5rem; display: flex; align-items: flex-start; gap: 0.75rem; }
+        .item:last-child { margin-bottom: 0; }
+
+        .badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+            margin-top: 0.2rem;
+        }
+
+        .badge-principle { background-color: var(--badge-principle-bg); color: var(--badge-principle-txt); }
+        .badge-technique { background-color: var(--badge-technique-bg); color: var(--badge-technique-txt); }
+        .badge-action { background-color: var(--badge-action-bg); color: var(--badge-action-txt); }
+
+        .content-text { font-size: 0.975rem; color: var(--text-secondary); flex: 1; }
+
+        .checklist-card {
+            background-color: var(--accent-light);
+            border: 1px solid var(--accent-border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .checklist-card h3 { color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.2rem; }
+        .checklist-card ul { list-style-type: none; }
+        .checklist-card li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .checklist-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-primary);
+            font-weight: bold;
+        }
+
+        @media (max-width: 640px) {
+            body { padding: 1rem 0.5rem; }
+            .item { flex-direction: column; gap: 0.25rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Made to Stick</h1>
+            <p>Why Some Ideas Survive and Others Die | By Chip Heath and Dan Heath</p>
+        </header>
+
+        <!-- Section 1: The Curse of Knowledge & Core Framework -->
+        <div class="section-title">Part I: The Enemy & The SUCCESs Framework</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">1. Overcoming the Curse of Knowledge</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">The villain of memorable communication is the "Curse of Knowledge"—once we know something, we cannot imagine what it is like not to know it, causing us to communicate in abstract, jargon-heavy ways.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">The SUCCESs Model — systematically structuring ideas to be Simple, Unexpected, Concrete, Credible, Emotional, and Story-driven to guarantee mental stickiness.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Translate complex expert knowledge into sensory language that a non-expert can immediately visualize and retain.</span>
+            </div>
+        </div>
+
+        <!-- Section 2: Simplicity, Unexpectedness & Concreteness -->
+        <div class="section-title">Part II: Capture & Anchor Attention</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">2. Simple, Unexpected & Concrete Communication</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">A sticky idea strips away fluff to find its core core message, violates human expectation to create curiosity, and grounds abstract concepts in tangible, human experiences.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Curiosity Gaps & Schema Anchoring — opening a gap in knowledge before filling it with an idea, and anchoring new ideas onto existing mental concepts (e.g., "a movie like Jaws on a spaceship").</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">Avoid high-level abstractions; frame every pitch using concrete sensory nouns, real-world examples, and surprising facts.</span>
+            </div>
+        </div>
+
+        <!-- Section 3: Credibility, Emotion & Stories -->
+        <div class="section-title">Part III: Inspire Belief & Drive Action</div>
+
+        <div class="chapter-card">
+            <div class="chapter-title">3. Credible, Emotional & Narrative Impact</div>
+            <div class="item">
+                <span class="badge badge-principle">Core Principle</span>
+                <span class="content-text">People believe ideas tested by real-life experience, care about ideas that appeal to identity and emotion rather than statistics, and act on ideas embedded in narratives that provide mental simulations for action.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-technique">Technique / Practice</span>
+                <span class="content-text">Human-Scale Statistics & Story Simulation — transforming vast metrics into relatable human terms and telling stories that act as mental flight simulators for listeners.</span>
+            </div>
+            <div class="item">
+                <span class="badge badge-action">Actionable Rule</span>
+                <span class="content-text">To motivate action, replace dry data with personal stories that tap into self-identity and emotional resonance.</span>
+            </div>
+        </div>
+
+        <!-- Master Implementation Checklist -->
+        <div class="checklist-card">
+            <h3>Master Implementation Checklist</h3>
+            <ul>
+                <li><strong>Find the Core:</strong> Strip your message down to a single, essential idea before presenting.</li>
+                <li><strong>Create Curiosity Gaps:</strong> Highlight what your audience doesn't know before revealing the answer.</li>
+                <li><strong>Use Concrete Language:</strong> Ground messages in specific actions, sensory details, and tangible human cases.</li>
+                <li><strong>Tell Actionable Stories:</strong> Use short stories that show people solving problems rather than delivering lectures.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
